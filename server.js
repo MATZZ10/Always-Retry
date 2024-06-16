@@ -1,9 +1,9 @@
-require("./settings");
+require("./settings.js"); // Sesuaikan dengan nama file dan lokasi yang benar jika perlu
 const http = require("http");
-const app = require("./index");
+const app = require("./index"); // Sesuaikan dengan nama file dan lokasi yang benar jika perlu
 
-const port = process.env.PORT || 8080; // Pastikan port diambil dari environment variables atau default ke 8080
-const creator = "Matzz"; // Ganti dengan nama pencipta jika belum didefinisikan di settings
+const port = process.env.PORT || 8080;
+const creator = process.env.CREATOR || "Matzz";
 
 http.createServer(app).listen(port, () => {
     console.log(`
@@ -14,7 +14,7 @@ http.createServer(app).listen(port, () => {
         ██║ ╚═╝ ██║██║  ██║   ██║   ███████║ 
         ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
 
-Server running on http://localhost:${port}
-Hello ${creator}
+    Server running on http://localhost:${port}
+    Hello ${creator}
     `);
 });
